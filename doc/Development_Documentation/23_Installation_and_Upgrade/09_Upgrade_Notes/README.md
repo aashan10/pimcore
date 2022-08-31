@@ -15,6 +15,8 @@
 - [Listings] Removed `JsonListing`, please see [#12877](https://github.com/pimcore/pimcore/pull/12877) for details.
 - [Traits] The traits PackageVersionTrait and StateHelperTrait in lib/Extension/Bundle/Traits have been marked as
    internal, please see [#12757](https://github.com/pimcore/pimcore/pull/12757) for details.
+- Removed deprecated `Pimcore\Db\ConnectionInterface` interface, `Pimcore\Db\Connection` class and `Pimcore\Db\PimcoreExtensionsTrait` trait.
+  Column identifiers for the `insert()` and `update()` method data must be self quoted now. You can use the `Pimcore\Db\Helper::quoteDataIdentifiers()` method for that.
 - Removed `SessionConfiguratorInterface` & `SessionConfigurator` so services with tag `pimcore.session.configurator` will not register session bags anymore.
 - Removed parameter `pimcore.admin.session.attribute_bags`
 - TargetingSessionBagListener - changed the signature of `__construct`.
